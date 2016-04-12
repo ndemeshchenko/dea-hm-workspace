@@ -7,6 +7,9 @@ server:
   container_depot_path: /var/vcap/data/warden/depot
   container_rlimits:
     core: <%= p("dea_next.rlimit_core") %>
+  <% if_p("dea_next.container_stop_timeout") do |container_stop_timeout| %>
+  container_stop_timeout: <%= container_stop_timeout %>
+  <% end %>
   pidfile: /var/vcap/sys/run/warden/warden.pid
   quota:
     disk_quota_enabled: <%= p("disk_quota_enabled") %>

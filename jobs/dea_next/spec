@@ -130,6 +130,9 @@ properties:
   dea_next.rlimit_core:
     description: "Maximum size of core file in bytes. 0 represents no core dump files can be created, and -1 represents no size limits."
     default: 0
+  dea_next.container_stop_timeout:
+    description: "Warden container gracefull stop timeout"
+    default: 10
   dea_next.stacks:
     default:
       - name: "cflinuxfs2"
